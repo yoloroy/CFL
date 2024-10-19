@@ -1,0 +1,7 @@
+input_numbers <-: input_lines .-> Int of? each
+
+firsts <-: (||input_numbers)::-1 //"drop last"
+seconds <-: 1::(||input_numbers) //"drop first"
+pairs <-: firsts /;/ seconds
+
+output_line <-: "inputted list contains " + #(pairs .-> each$0 = each$1) + " pairs"

@@ -1,0 +1,7 @@
+input_numbers := input_lines -map> Int of? each
+
+firsts := input_numbers drop last 1 //"drop last"
+seconds := input_numbers drop first 1 //"drop first"
+pairs := firsts zip seconds
+
+output_line := "inputted list contains " + count(pairs -map> : each$0 = each$1 .) + " pairs"

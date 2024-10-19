@@ -1,0 +1,24 @@
+//"std@range : function"
+//
+//"@start : Int, no default"
+//"@top_bound : Int, default = Int@max"
+//"@bottom_bound : Int, default = Int@min"
+//"@step : Int, default = 1"
+//
+//"usage:"
+//"    output_line <-: "every even number from 50 to 100""
+//"    range <-: ||std@range"
+//"    range@start <-: 50"
+//"    range@step <-: 2"
+//"    range@top_bound <-: 100"
+//"    #range .-> : output_line <-: each ."
+range <-: $: //"TODO functionalBlocks declaration"
+    step <-: step ?-> 1 . //"TODO onNothing operator"
+    top_bound <-: top_bound ?-> Int@max .
+    bottom_bound <-: bottom_bound ?-> Int@min .
+
+    i <-: start
+    following <-: >>: bottom_bound <= i && i <= top_bound. .-> i <-: i + step //"TODO comparison and boolean operators"
+
+    i ,-> following //"TODO streams joining operation"
+.
